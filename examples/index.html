@@ -12,6 +12,31 @@ html,textarea {font-family: sans-serif;}
 body {margin: 0;}
 form {margin: 0 0 25px 0;}
 textarea {font-size: 100%;margin: 0;overflow: auto;vertical-align: top;}
+
+body {
+  font: 87.5%/1.25 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 50px
+}
+
+textarea {
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px #e5e5e5;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 6px;
+  resize: none;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  vertical-align: middle;
+}
+
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted 9;
+}
 </style>
 </head>
 <body>
