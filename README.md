@@ -2,11 +2,11 @@
 
 This is a very small jQuery plugin for auto expanding (auto grow) Textareas. If you've commented on Facebook, this plugin replicates the auto expanding behavior of their textarea implementations. Using `SHIFT` + `ENTER` will enter new lines whether text has been entered or not. If the textarea does not have a value, then hitting just the `ENTER` key will add new lines. Although if it does have text and the `ENTER` key is used we can easily capture that in a handler and submit the form. This replicates the exact behavior on Facebook.
 
-I felt that many scripts similar to this didn't feel smooth. The text and the textarea control would flicker on hitting the `ENTER` key. Most were outdated and all were a lot bulkier than they should be. More importantly I wanted just behavior in the script. Anything regarding presentation would be controlled through CSS.
+I found that many similar scripts didn't feel smooth. The text and the textarea control would flicker on hitting the `ENTER` key with a noticable delay in resizing. Most were outdated and all were a lot bulkier than they should be. More importantly I wanted just behavior in the script. Anything regarding presentation would be controlled through CSS.
 
 ## Usage Examples
 
-This is all that is needed to enable the plugin.
+To enable the pluging simply find the `textarea` element you want and call the plugin method.
 
     <textarea class="js-auto-expand comment-field"></textarea>
     
@@ -16,7 +16,7 @@ This is all that is needed to enable the plugin.
       $('.js-auto-expand').textareaAutoExpand();
     </script>
 
-Any presentation details can and should be controlled through CSS. In the following example the textarea has an initial height of one line of text with a maximum height of 90px that was determined based on the font-size and line-height so it was even and thus no text would be cut off. If you want the textarea to grow infinitely as it does on Facebook just simply remove the maximum height.
+Any presentation details can and should be controlled through CSS. In the following example the textarea has an initial height of one line of text with a maximum height of 90px that was determined based on the font-size and line-height so it was even and thus no text would be cut off. If you want the textarea to grow infinitely as it does on Facebook just simply remove the maximum height. You can use a larger minimum height and once you enter enough lines of text it auto expand as expected.
 
     textarea {
       border-radius: 6px;
