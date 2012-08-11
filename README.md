@@ -11,6 +11,7 @@ This is all that is needed to enable the plugin.
     <textarea class="js-auto-expand comment-field"></textarea>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.textarea_auto_expand.js"></script>
     <script>
       $('.js-auto-expand').textareaAutoExpand();
     </script>
