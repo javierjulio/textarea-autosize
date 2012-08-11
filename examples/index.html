@@ -49,9 +49,25 @@ textarea:focus {
   max-height: 150px;
   width: 250px;
 }
+
+.single-line-no-box-sizing {
+  box-sizing: content-box;
+  min-height: 16px;
+  max-height: 90px;
+  width: 250px;
+}
+
+.multiple-lines-no-box-sizing {
+  box-sizing: content-box;
+  min-height: 48px;
+  max-height: 150px;
+  width: 250px;
+}
 </style>
 </head>
 <body>
+
+<p>Using box-sizing: border-box;</p>
 
 <form>
 <textarea class="js-auto-expand single-line" rows="1" placeholder="Add a comment..."></textarea>
@@ -59,6 +75,16 @@ textarea:focus {
 
 <form>
 <textarea class="js-auto-expand multiple-lines" rows="3" placeholder="Add a comment..."></textarea>
+</form>
+
+<p>Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</p>
+
+<form>
+<textarea class="js-auto-expand single-line-no-box-sizing" rows="1" placeholder="Add a comment..."></textarea>
+</form>
+
+<form>
+<textarea class="js-auto-expand multiple-lines-no-box-sizing" rows="3" placeholder="Add a comment..."></textarea>
 </form>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
