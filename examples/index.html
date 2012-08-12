@@ -107,6 +107,22 @@ textarea:focus {
 </form>
 </div>
 
+<div style="float:left;width:280px;">
+<p>Uses ENTER to submit, SHIFT+ENTER to enter new line. If no value in textarea then ENTER key enters a new line instead.</p>
+
+<form>
+<textarea class="js-auto-expand single-line submit-on-enter" rows="1" placeholder="Add a comment..."></textarea>
+</form>
+
+<form>
+<textarea class="js-auto-expand multiple-lines submit-on-enter" rows="3" placeholder="Add a comment..."></textarea>
+</form>
+
+<form>
+<textarea class="js-auto-expand multiple-lines submit-on-enter" rows="3" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
+</form>
+</div>
+
 <!-- trigger browser scrollbars, since we reset textarea height temporarily, when it has an initial value and you enter any character or delete a character the browser scroll position jumps. This can be prevented by resetting the window scroll position or creating a div wrapper around the textarea that always has the textarea height. -->
 <br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br>
@@ -116,6 +132,7 @@ textarea:focus {
 <script>
 $('.js-auto-expand')
   .textareaAutoExpand()
+  .filter('.submit-on-enter')
   .on('keydown', function(event) {
     console.log('SUBMIT', event.keyCode == 13, !event.shiftKey, this.value.replace(/\s/g, '').length > 0);
     if (event.keyCode == 13 && !event.shiftKey && this.value.replace(/\s/g, '').length > 0) 
