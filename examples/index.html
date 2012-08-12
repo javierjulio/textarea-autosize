@@ -106,7 +106,18 @@ textarea:focus {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="jquery.textarea_auto_expand.js"></script>
 <script>
-$('.js-auto-expand').textareaAutoExpand();
+$('.js-auto-expand')
+  .textareaAutoExpand()
+  .on('keydown', function(event) {
+    console.log('SUBMIT', event.keyCode == 13, !event.shiftKey, this.value.replace(/\s/g, '').length > 0);
+    if (event.keyCode == 13 && !event.shiftKey && this.value.replace(/\s/g, '').length > 0) 
+    {
+      $(this.form).submit();
+      return false;
+    }
+    //else
+    //  return true;
+  });
 </script>
 
 </body>
