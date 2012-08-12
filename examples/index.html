@@ -75,6 +75,7 @@ textarea:focus {
 </head>
 <body>
 
+<div style="float:left;width:280px;">
 <p>Using box-sizing: border-box;</p>
 
 <form>
@@ -88,8 +89,10 @@ textarea:focus {
 <form>
 <textarea class="js-auto-expand multiple-lines" rows="3" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
 </form>
+</div>
 
-<p>Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</p>
+<div style="float:left;width:280px;">
+<p>Using default layout (content-box).</p>
 
 <form>
 <textarea class="js-auto-expand single-line-no-box-sizing" rows="1" placeholder="Add a comment..."></textarea>
@@ -102,6 +105,7 @@ textarea:focus {
 <form>
 <textarea class="js-auto-expand multiple-lines-no-box-sizing" rows="3" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
 </form>
+</div>
 
 <!-- trigger browser scrollbars, since we reset textarea height temporarily, when it has an initial value and you enter any character or delete a character the browser scroll position jumps. This can be prevented by resetting the window scroll position or creating a div wrapper around the textarea that always has the textarea height. -->
 <br><br><br><br><br><br><br><br>
