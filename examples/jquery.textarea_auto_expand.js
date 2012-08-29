@@ -13,25 +13,37 @@
       
       var diff = this.scrollHeight - height;
       
-      if (textarea.val() != '') 
-      {
-        console.log('textarea has initial value', diff, height, this.scrollHeight);
-        
-        // FIXME: diff becomes a larger negative value with starting textarea value
-        /*
-        if (textarea.css('box-sizing') != 'border-box') 
-          console.log(diff = parseInt(textarea.css('padding-top')) + parseInt(textarea.css('padding-bottom')));
-        else
-          diff = 0
-        */
-        diff = 0;
-        textarea.height(this.scrollHeight); // when textarea has content height works differently
-      }
       console.log('initial', diff, height, this.scrollHeight);
       
+      if (textarea.val() != '') 
+      {
+      /*
+        console.log('textarea has initial value', diff, height, this.scrollHeight);
+        var scrollHeight = this.scrollHeight;
+        // FIXME: diff becomes a larger negative value with starting textarea value
+        if (textarea.css('box-sizing') == 'content-box' || textarea.css('-moz-box-sizing') == 'content-box') 
+        {
+          console.log(diff = parseInt(textarea.css('padding-top')) + parseInt(textarea.css('padding-bottom')) + parseInt(textarea.css('border-top-width')) + parseInt(textarea.css('border-bottom-width')));
+          scrollHeight = this.scrollHeight - diff;
+        }
+        else
+        {
+          scrollHeight = this.scrollHeight;
+          diff = 0
+        }
+        
+        diff = 0;
+        textarea.height(scrollHeight); // when textarea has content height works differently
+        */
+        diff = 0;
+        textarea.height(this.scrollHeight);
+        
+        console.log('TEXT SET', diff, height, this.scrollHeight, this.clientHeight);
+      }
+      
       textarea.on('scroll input keydown keyup', function(event){
-        if (event.keyCode == 13 && !event.shiftKey) {
-          console.log('length', this.value.replace(/\s/g, '').length)
+        if (event.type == 'keydown' && event.keyCode == 13 && !event.shiftKey) {
+          console.log('length', this.value.replace(/\s/g, '').length, event.type)
           
           // just allow default behavior to enter new line
           if (this.value.replace(/\s/g, '').length == 0) {
