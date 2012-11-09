@@ -4,6 +4,20 @@
       var textarea = $(this);
       var height = textarea.height();
       
+      // bind event for textareas with class .submit-on-enter
+      // Uses ENTER to submit, SHIFT+ENTER to enter new line. 
+      // If no value in textarea then ENTER key enters a new line instead.
+      if(textarea.hasClass("submit-on-enter")) {
+        textarea.on('keydown', function(event) {
+          if (event.keyCode == 13 && !event.shiftKey && this.value.replace(/\s/g, '').length > 0) 
+          {
+            console.log("aber hallo");
+            $(this.form).submit();
+            return false;
+          }
+        });
+      }
+
       if (textarea.css('box-sizing') === 'border-box' || 
           textarea.css('-moz-box-sizing') === 'border-box' || 
           textarea.css('-webkit-box-sizing') === 'border-box') 
@@ -13,37 +27,17 @@
       
       var diff = this.scrollHeight - height;
       
-      console.log('initial', diff, height, this.scrollHeight);
+      // console.log('initial', diff, height, this.scrollHeight);
       
       if (textarea.val() != '') 
       {
-      /*
-        console.log('textarea has initial value', diff, height, this.scrollHeight);
-        var scrollHeight = this.scrollHeight;
-        // FIXME: diff becomes a larger negative value with starting textarea value
-        if (textarea.css('box-sizing') == 'content-box' || textarea.css('-moz-box-sizing') == 'content-box') 
-        {
-          console.log(diff = parseInt(textarea.css('padding-top')) + parseInt(textarea.css('padding-bottom')) + parseInt(textarea.css('border-top-width')) + parseInt(textarea.css('border-bottom-width')));
-          scrollHeight = this.scrollHeight - diff;
-        }
-        else
-        {
-          scrollHeight = this.scrollHeight;
-          diff = 0
-        }
-        
-        diff = 0;
-        textarea.height(scrollHeight); // when textarea has content height works differently
-        */
         diff = 0;
         textarea.height(this.scrollHeight);
-        
-        console.log('TEXT SET', diff, height, this.scrollHeight, this.clientHeight);
       }
       
       textarea.on('scroll input keydown keyup', function(event){
         if (event.type == 'keydown' && event.keyCode == 13 && !event.shiftKey) {
-          console.log('length', this.value.replace(/\s/g, '').length, event.type)
+          // console.log('length', this.value.replace(/\s/g, '').length, event.type)
           
           // just allow default behavior to enter new line
           if (this.value.replace(/\s/g, '').length == 0) {
@@ -54,7 +48,7 @@
         
         textarea.height(0);
         //console.log(event.type, diff, height, this.scrollHeight, Math.max(height, this.scrollHeight + (diff * -1)));
-        console.log(event.type, diff, height, this.scrollHeight);
+        // console.log(event.type, diff, height, this.scrollHeight);
         textarea.height(Math.max(height, this.scrollHeight + (diff * -1)));
       });
       
