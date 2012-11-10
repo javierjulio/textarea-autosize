@@ -124,25 +124,12 @@ textarea:focus {
 </div>
 
 <!-- trigger browser scrollbars, since we reset textarea height temporarily, when it has an initial value and you enter any character or delete a character the browser scroll position jumps. This can be prevented by resetting the window scroll position or creating a div wrapper around the textarea that always has the textarea height. -->
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="jquery.textarea_auto_expand.js"></script>
 <script>
-$('.js-auto-expand')
-  .textareaAutoExpand()
-  .filter('.submit-on-enter')
-  .on('keydown', function(event) {
-    console.log('SUBMIT', event.keyCode == 13, !event.shiftKey, this.value.replace(/\s/g, '').length > 0);
-    if (event.keyCode == 13 && !event.shiftKey && this.value.replace(/\s/g, '').length > 0) 
-    {
-      $(this.form).submit();
-      return false;
-    }
-    //else
-    //  return true;
-  });
+  $('.js-auto-expand').textareaAutoExpand();
 </script>
 
 </body>
