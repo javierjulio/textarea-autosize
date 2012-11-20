@@ -10,7 +10,7 @@ To enable the plugin simply load the script file and use jQuery to find the desi
 
     <textarea class="js-auto-expand"></textarea>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="jquery.textarea_auto_expand.js"></script>
     <script>
       $('textarea.js-auto-expand').textareaAutoExpand();
@@ -20,7 +20,7 @@ Any presentation details can and should be controlled through CSS. In the follow
 
     textarea {
       border-radius: 3px;
-      box-sizing: border-box;
+      box-sizing: border-box; /* don't forget to add vendor prefixes */
       height: 28px;
       max-height: 90px;
       min-height: 28px;
@@ -29,7 +29,7 @@ Any presentation details can and should be controlled through CSS. In the follow
       width: 100%;
     }
 
-While the example uses `box-sizing: border-box;` [(safe to use)](http://caniuse.com/#search=box-sizing), the plugin still behaves and renders as expected when using the default box-sizing value content-box, although due to that change you'll have to modify the height to not include the vertical padding and border total.
+While the example uses `box-sizing: border-box;` [(which is safe to use with vendor prefixes for greater coverage)](http://caniuse.com/#search=box-sizing) the plugin still behaves and renders as expected when using the browser default `box-sizing: content-box;`. Just remember to adjust the height to not include the vertical padding and border total.
 
 ## Resources
 
