@@ -3,48 +3,27 @@
     return this.each(function(){
       var textarea = $(this);
       var height = textarea.height();
+      var diff = parseInt(textarea.css('borderBottomWidth')) + parseInt(textarea.css('borderTopWidth')) + 
+                 parseInt(textarea.css('paddingBottom')) + parseInt(textarea.css('paddingTop'));
+      var hasInitialValue = (this.value.replace(/\s/g, '').length > 0);
       
       if (textarea.css('box-sizing') === 'border-box' || 
           textarea.css('-moz-box-sizing') === 'border-box' || 
-          textarea.css('-webkit-box-sizing') === 'border-box') 
-      {
+          textarea.css('-webkit-box-sizing') === 'border-box') {
         height = textarea.outerHeight();
+        
+        if (this.scrollHeight + diff == height) // special case for Firefox where scrollHeight isn't full height on border-box
+          diff = 0;
+      } else {
+        diff = 0;
       }
       
-      var diff = this.scrollHeight - height;
-      
-      console.log('initial', diff, height, this.scrollHeight);
-      
-      if (textarea.val() != '') 
-      {
-      /*
-        console.log('textarea has initial value', diff, height, this.scrollHeight);
-        var scrollHeight = this.scrollHeight;
-        // FIXME: diff becomes a larger negative value with starting textarea value
-        if (textarea.css('box-sizing') == 'content-box' || textarea.css('-moz-box-sizing') == 'content-box') 
-        {
-          console.log(diff = parseInt(textarea.css('padding-top')) + parseInt(textarea.css('padding-bottom')) + parseInt(textarea.css('border-top-width')) + parseInt(textarea.css('border-bottom-width')));
-          scrollHeight = this.scrollHeight - diff;
-        }
-        else
-        {
-          scrollHeight = this.scrollHeight;
-          diff = 0
-        }
-        
-        diff = 0;
-        textarea.height(scrollHeight); // when textarea has content height works differently
-        */
-        diff = 0;
+      if (hasInitialValue) {
         textarea.height(this.scrollHeight);
-        
-        console.log('TEXT SET', diff, height, this.scrollHeight, this.clientHeight);
       }
       
-      textarea.on('scroll input keydown keyup', function(event){
-        if (event.type == 'keydown' && event.keyCode == 13 && !event.shiftKey) {
-          console.log('length', this.value.replace(/\s/g, '').length, event.type)
-          
+      textarea.on('scroll input', function(event){
+        if (event.keyCode == 13 && !event.shiftKey) {
           // just allow default behavior to enter new line
           if (this.value.replace(/\s/g, '').length == 0) {
             event.stopImmediatePropagation();
@@ -53,11 +32,9 @@
         }
         
         textarea.height(0);
-        //console.log(event.type, diff, height, this.scrollHeight, Math.max(height, this.scrollHeight + (diff * -1)));
-        console.log(event.type, diff, height, this.scrollHeight);
-        textarea.height(Math.max(height, this.scrollHeight + (diff * -1)));
+        //textarea.height(Math.max(height - diff, this.scrollHeight - diff));
+        textarea.height(this.scrollHeight - diff);
       });
-      
     });
   }
 })(jQuery);
