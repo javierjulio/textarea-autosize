@@ -22,7 +22,7 @@
         textarea.height(this.scrollHeight);
       }
       
-      textarea.on('scroll input', function(event){
+      textarea.on('scroll input keyup', function(event){ // keyup isn't necessary but when deleting text IE needs it to reset height properly
         if (event.keyCode == 13 && !event.shiftKey) {
           // just allow default behavior to enter new line
           if (this.value.replace(/\s/g, '').length == 0) {
