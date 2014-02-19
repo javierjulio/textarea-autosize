@@ -10,11 +10,13 @@
 html {font-size: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
 html,textarea {font-family: sans-serif;}
 body {margin: 0;}
-form {margin: 0 0 25px 0;}
-textarea {font-size: 100%;margin: 0;overflow: auto;vertical-align: top;}
+form {margin: 0 0 25px 0; padding: 0;}
+textarea {font-size: 100%;margin: 0;overflow:auto;vertical-align: top;}
 
 body {
-  font: 87.5%/1.25 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
   padding: 50px;
 }
 
@@ -27,9 +29,7 @@ textarea {
   box-sizing: border-box;
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  padding: 4px;
+  padding: 6px 8px;
   resize: none;
   transition: border linear 0.2s, box-shadow linear 0.2s;
 }
@@ -42,36 +42,17 @@ textarea:focus {
 }
 
 .single-line {
-  height: 28px;
-  min-height: 28px;
-  max-height: 90px;
+  min-height: 31px;
+  max-height: 94px;
   width: 250px;
 }
 
 .multiple-lines {
-  height: 64px;
-  min-height: 64px;
+  min-height: 66px;
   max-height: 150px;
   width: 250px;
 }
 
-.single-line-no-box-sizing {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 18px;
-  min-height: 18px;
-  max-height: 90px;
-  width: 250px;
-}
-
-.multiple-lines-no-box-sizing {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 54px;
-  min-height: 54px;
-  max-height: 150px;
-  width: 250px;
-}
 </style>
 </head>
 <body>
@@ -84,29 +65,14 @@ textarea:focus {
 </form>
 
 <form>
-<textarea class="js-auto-expand multiple-lines" placeholder="Add a comment..."></textarea>
+<textarea class="js-auto-expand multiple-lines" rows="3" placeholder="Add a comment..."></textarea>
 </form>
 
 <form>
-<textarea class="js-auto-expand multiple-lines" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
+<textarea class="js-auto-expand multiple-lines" rows="6" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
 </form>
 </div>
 
-<div style="float:left;width:280px;">
-<p>Using default layout (content-box).</p>
-
-<form>
-<textarea class="js-auto-expand single-line-no-box-sizing" rows="1" placeholder="Add a comment..."></textarea>
-</form>
-
-<form>
-<textarea class="js-auto-expand multiple-lines-no-box-sizing" placeholder="Add a comment..."></textarea>
-</form>
-
-<form>
-<textarea class="js-auto-expand multiple-lines-no-box-sizing" placeholder="Add a comment...">Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied. Using default value for box-sizing so height isn't the rendered height since we have padding and borders applied.</textarea>
-</form>
-</div>
 
 <div style="float:left;width:280px;">
 <p>Uses ENTER to submit, SHIFT+ENTER to enter new line. If no value in textarea then ENTER key enters a new line instead.</p>
