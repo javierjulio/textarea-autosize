@@ -24,5 +24,5 @@
           .height(this.scrollHeight - diff);
       });
     });
-  }
+  };
 })(jQuery);

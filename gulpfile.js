@@ -14,8 +14,8 @@ var BUMP_TYPES = ['major', 'minor', 'patch', 'prerelease'];
 
 gulp.task('lint', function () {
   return gulp.src('./src/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'));
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task('clean', function () {
@@ -33,7 +33,7 @@ gulp.task('build', ['clean'], function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/*.js', ['build']);
+  gulp.watch('src/*.js', ['lint', 'build']);
 });
 
 gulp.task('validation', function () {
