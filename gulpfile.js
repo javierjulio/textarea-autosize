@@ -32,6 +32,10 @@ gulp.task('build', ['clean'], function () {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('watch', function() {
+  gulp.watch('src/*.js', ['build']);
+});
+
 gulp.task('validation', function () {
   if (BUMP_TYPES.indexOf(gutil.env.bump) == -1)
     throw new Error('\nbump argument is required for gulp release\nSupported values: major, minor, patch, prerelease\n\nExample:\n\tgulp release --bump major');
