@@ -1,0 +1,26 @@
+{
+  "name": "textarea-auto-expand",
+  "version": "0.1.0",
+  "homepage": "https://github.com/javierjulio/textarea-auto-expand",
+  "authors": [
+    "Javier Julio <jjfutbol@gmail.com>"
+  ],
+  "description": "A super small script that enables an auto expanding textarea when using the ENTER key. No cloned element is used.",
+  "main": "dist/jquery.textarea_auto_expand.js",
+  "keywords": [
+    "textarea",
+    "expand",
+    "grow",
+    "vertical",
+    "autoexpand",
+    "autogrow"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
