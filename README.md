@@ -10,8 +10,8 @@ To enable the plugin simply load the script file and use jQuery to find the desi
 
     <textarea class="js-auto-expand"></textarea>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="jquery.textarea_auto_expand.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="jquery.textarea_auto_expand.min.js"></script>
     <script>
       $('textarea.js-auto-expand').textareaAutoExpand();
     </script>
