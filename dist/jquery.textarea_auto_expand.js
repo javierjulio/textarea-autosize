@@ -18,8 +18,8 @@
         textarea.height(this.scrollHeight);
       }
       
-      textarea.on('scroll input keyup', function(event){ // keyup is required for IE to properly reset height when deleting text
-        textarea
+      textarea.on('input keyup', function(event) { // keyup is required for IE to properly reset height when deleting text
+        $(this)
           .height('auto')
           .height(this.scrollHeight - diff);
       });
