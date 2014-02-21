@@ -1,7 +1,7 @@
 {
   "name": "textarea-auto-expand",
   "version": "0.1.0",
-  "description": "A super small script that enables an auto expanding textarea when using the ENTER key. No cloned element is used.",
+  "description": "Vertically adjust a textarea based on user input without using a clone or ghost element.",
   "main": "dist/jquery.textarea_auto_expand.js",
   "directories": {
     "example": "examples"
