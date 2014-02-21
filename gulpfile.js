@@ -32,7 +32,7 @@ gulp.task('build', ['clean'], function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['lint', 'build'], function() {
   gulp.watch('src/*.js', ['lint', 'build']);
 });
 
