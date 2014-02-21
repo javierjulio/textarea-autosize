@@ -36,7 +36,7 @@
     "autogrow"
   ],
   "author": "Javier Julio",
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "5830e2367854630eb8fccec7d79fd0e12d5aa54f",
   "bugs": {
