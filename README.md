@@ -1,14 +1,14 @@
-# A jQuery Plugin for Auto Expanding Textarea
+# textarea-auto-expand
 
-This is a very small jQuery plugin for auto expanding (auto grow) textareas. If you've commented on Facebook, this plugin replicates the auto expanding behavior of their textarea implementations. Using `SHIFT` + `ENTER` will enter new lines whether text has been entered or not. If the textarea does not have a value, then hitting just the `ENTER` key will add new lines. Although if it does have text and the `ENTER` key is used that can easily be captured in an event handler where you can submit the form (not part of the plugin, but an example is provided).
+This is a jQuery plugin for vertically adjusting a textarea based on user input *without* using a clone or ghost element.
 
-I found that many similar scripts didn't feel smooth. The text and the textarea control would flicker on entering new lines with a noticable delay in resizing. Most were outdated and all were a lot bulkier than they should be. Most having to use a mirror/ghost textarea that would be rendered offscreen and constantly written to. More importantly I wanted just the behavior in the script. Anything regarding presentation would be controlled through CSS.
+I found that many solutions didn't feel smooth. The textarea would flicker on entering new lines with a noticeable delay in resizing. Most were outdated and all were a lot bulkier than they had to be. Most had to use a mirror textarea or ghost element that would be rendered offscreen and constantly written to. More importantly I wanted just the behavior in the script. Anything regarding presentation would be controlled through CSS.
 
 ## Installation and Usage Example
 
 To enable the plugin simply load the script file and use jQuery to find the desired `textarea` elements and call the plugin method on the collection.
 
-    <textarea class="js-auto-expand"></textarea>
+    <textarea class="js-auto-expand" rows="1"></textarea>
     
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="jquery.textarea_auto_expand.min.js"></script>
@@ -16,28 +16,34 @@ To enable the plugin simply load the script file and use jQuery to find the desi
       $('textarea.js-auto-expand').textareaAutoExpand();
     </script>
 
-Any presentation details can and should be controlled through CSS. In the following example the textarea has an initial height of one line of text with a maximum height set that was determined based on the font-size and line-height so it was even and thus no text should be cut off. If you want the textarea to grow infinitely (as it does on Facebook) just simply remove the maximum height. You can use a larger minimum height and once you enter enough lines of text it will auto expand from that point on as expected.
+## CSS
+
+Any presentation details can and should be controlled through CSS. In the following example the textarea has an initial height of one line of text (determined based on the font-size and line-height) by setting the minimum height desired. If you want the textarea to grow infinitely just remove the maximum height. You can use a larger minimum height to show more rows and once you enter enough lines of text it will auto expand from that point on as expected.
 
     textarea {
-      border-radius: 3px;
-      box-sizing: border-box; /* don't forget to add vendor prefixes */
-      height: 28px;
-      max-height: 90px;
-      min-height: 28px;
-      padding: 4px;
-      resize: none;
-      width: 100%;
+      box-sizing: border-box;
+      max-height: 94px;
+      min-height: 31px;
     }
 
-While the example uses `box-sizing: border-box;` [(which is safe to use with vendor prefixes for greater coverage)](http://caniuse.com/#search=box-sizing) the plugin still behaves and renders as expected when using the browser default `box-sizing: content-box;`. Just remember to adjust the height to not include the vertical padding and border total.
+The only required styles are setting `min-height` and `box-sizing: border-box` as the `max-height` is only necessary if you don't want the textarea to grow past a certain point.
+
+## Browsers Tested
+
+Unless specified, all browsers listed were the latest versions.
+
+* Mac
+** Chrome
+** Safari
+** Firefox
+** IE 9 and 10 (using VirtualBox and [ievms](https://github.com/xdissent/ievms))
+* Windows
+** TODO
 
 ## Resources
 
-As I researched for an existing solution I ended up creating this plugin based on code from several of these resources below where I tried to simplify just to what was needed.
-
-* http://enginaygen.com/index.php/2011/12/30/auto-growing-textarea-with-jquery/
-* https://github.com/cburgmer/jquery-shiftenter
 * https://github.com/theproductguy/BetterGrow
+* https://github.com/cburgmer/jquery-shiftenter
 
 ## License
 
