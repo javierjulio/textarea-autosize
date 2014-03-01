@@ -1,6 +1,7 @@
 {
   "name": "textarea-auto-expand",
   "version": "0.1.0",
+  "author": "Javier Julio <jjfutbol@gmail.com>",
   "description": "Vertically adjust a textarea based on user input without using a clone or ghost element.",
   "main": "dist/jquery.textarea_auto_expand.js",
   "directories": {
@@ -17,11 +18,12 @@
     "gulp-git": "~0.3.2",
     "gulp-clean": "~0.2.4",
     "gulp-jshint": "~1.4.2",
-    "gulp-prompt": "~0.1.0",
-    "gulp-util": "~2.2.14"
+    "gulp-util": "~2.2.14",
+    "connect": "^2.13.0"
   },
   "scripts": {
-    "test": "test"
+    "start": "gulp",
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -35,7 +37,6 @@
     "autoexpand",
     "autogrow"
   ],
-  "author": "Javier Julio",
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "5830e2367854630eb8fccec7d79fd0e12d5aa54f",
