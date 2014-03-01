@@ -8,22 +8,24 @@ var clean = require('gulp-clean');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
+var child_process = require('child_process');
+var connect = require('connect');
 
 var BUMP_TYPES = ['major', 'minor', 'patch', 'prerelease'];
 
 gulp.task('lint', function () {
-  return gulp.src('./src/*.js')
+  gulp.src('./src/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('clean', function () {
-  return gulp.src('./dist', { read: false })
+  gulp.src('./dist', { read: false })
     .pipe(clean());
 });
 
 gulp.task('build', ['clean'], function () {
-  return gulp.src('./src/jquery.textarea_auto_expand.js')
+  gulp.src('./src/jquery.textarea_auto_expand.js')
     .pipe(gulp.dest('./dist'))
     .pipe(rename('jquery.textarea_auto_expand.min.js'))
     .pipe(uglify())
@@ -59,8 +61,17 @@ gulp.task('tag', ['bump'], function () {
 });
 
 gulp.task('npm', ['tag'], function (done) {
-  require('child_process').spawn('npm', ['publish'], { stdio: 'inherit' })
+  child_process
+    .spawn('npm', ['publish'], { stdio: 'inherit' })
     .on('close', done);
+});
+
+gulp.task('server', function() {
+  connect.createServer(connect.static(__dirname)).listen(3000);
+});
+
+gulp.task('browser', function() {
+  child_process.spawn('open', ['http://localhost:3000/examples/']);
 });
 
 gulp.task('test', ['lint', 'mocha']);
@@ -68,4 +79,4 @@ gulp.task('ci', ['build']);
 //gulp.task('release', ['validation', 'npm']);
 gulp.task('release', ['validation', 'bump']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'server', 'browser']);
