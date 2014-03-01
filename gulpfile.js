@@ -8,7 +8,6 @@ var clean = require('gulp-clean');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
-var prompt = require('gulp-prompt');
 
 var BUMP_TYPES = ['major', 'minor', 'patch', 'prerelease'];
 
