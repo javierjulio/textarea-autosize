@@ -19,12 +19,7 @@ gulp.task('lint', function () {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('clean', function () {
-  gulp.src('./dist', { read: false })
-    .pipe(clean());
-});
-
-gulp.task('build', ['lint', 'clean'], function () {
+gulp.task('build', ['lint'], function () {
   gulp.src('./src/jquery.textarea_auto_expand.js')
     .pipe(gulp.dest('./dist'))
     .pipe(rename('jquery.textarea_auto_expand.min.js'))
