@@ -10,7 +10,8 @@
 html,body,textarea {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 body {margin: 0; padding: 50px;}
 form {margin: 0 0 25px 0; padding: 0;}
-textarea {display: block;font-size: 100%;margin: 0;overflow:auto;vertical-align: top;}
+textarea {border: 1px solid #d9d9d9; border-radius: 3px; font-size: inherit; margin: 0; overflow: auto;}
+textarea:focus {border-color: rgba(82, 168, 236, 0.8); box-shadow: 0 0 6px rgba(102, 175, 233, .6); outline: 0;}
 
 body {
   font-size: 14px;
@@ -18,19 +19,9 @@ body {
 }
 
 textarea {
-  border: 1px solid #d9d9d9;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 6px 8px;
-  transition: border-color linear 0.2s, box-shadow linear 0.2s;
-}
-
-textarea:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-  outline: 0;
 }
 
 .single-line {
