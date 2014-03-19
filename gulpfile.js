@@ -24,7 +24,7 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('build', ['clean'], function () {
+gulp.task('build', ['lint', 'clean'], function () {
   gulp.src('./src/jquery.textarea_auto_expand.js')
     .pipe(gulp.dest('./dist'))
     .pipe(rename('jquery.textarea_auto_expand.min.js'))
@@ -33,8 +33,8 @@ gulp.task('build', ['clean'], function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', ['lint', 'build'], function() {
-  gulp.watch('src/*.js', ['lint', 'build']);
+gulp.task('watch', ['build'], function() {
+  return gulp.watch('src/*.js', ['build']);
 });
 
 gulp.task('validation', function () {
@@ -70,7 +70,7 @@ gulp.task('server', function() {
   connect.createServer(connect.static(__dirname)).listen(3000);
 });
 
-gulp.task('browser', function() {
+gulp.task('browser', ['server'], function() {
   child_process.spawn('open', ['http://localhost:3000/examples/']);
 });
 
@@ -79,4 +79,4 @@ gulp.task('ci', ['build']);
 //gulp.task('release', ['validation', 'npm']);
 gulp.task('release', ['validation', 'bump']);
 
-gulp.task('default', ['watch', 'server', 'browser']);
+gulp.task('default', ['watch', 'browser']);
