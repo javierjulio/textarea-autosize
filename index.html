@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>textarea-auto-expand by javierjulio</title>
+
+    <link rel="stylesheet" href="gh-pages-assets/stylesheets/styles.css">
+    <link rel="stylesheet" href="gh-pages-assets/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>textarea-auto-expand</h1>
+        <p>Vertically adjust a textarea based on user input without using a clone or ghost element.</p>
+
+        <p class="view"><a href="https://github.com/javierjulio/textarea-auto-expand">View the Project on GitHub <small>javierjulio/textarea-auto-expand</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/javierjulio/textarea-auto-expand/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/javierjulio/textarea-auto-expand/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/javierjulio/textarea-auto-expand">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="textarea-auto-expand" class="anchor" href="#textarea-auto-expand"><span class="octicon octicon-link"></span></a>textarea-auto-expand</h1>
+
+<p>This is a jQuery plugin for enabling vertically adjusting textarea's through user input <em>without</em> using a clone or ghost element.</p>
+
+<p>So why build this? Many solutions didn't feel smooth. In some the textarea would flicker on entering new lines with a noticeable delay in resizing. Most were outdated and all were a lot bulkier than they had to be. Many had to use a mirror textarea or ghost element with some needing presentation values set in script. I wanted just the behavior in the script. Anything regarding presentation should be in CSS.</p>
+
+<h2>Demo</h2>
+
+<p><textarea class="js-auto-expand" rows="1"></textarea></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Load the plugin and use jQuery to find the desired <code>textarea</code> elements on which to call the plugin method.</p>
+
+<div class="highlight highlight-html"><pre>  <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"js-auto-expand"</span> <span class="na">rows=</span><span class="s">"1"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-2.1.0.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.textarea_auto_expand.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'textarea.js-auto-expand'</span><span class="p">).</span><span class="nx">textareaAutoExpand</span><span class="p">();</span>
+  <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>Use a desired default number of text rows in conjunction with the required CSS below.</p>
+
+<h3>
+<a name="css-requirements" class="anchor" href="#css-requirements"><span class="octicon octicon-link"></span></a>CSS Requirements</h3>
+
+<p>Set the <code>textarea</code> to <code>box-sizing: border-box</code> and give it a <code>min-height</code>. In the example below, the minimum height is one line of text which is determined from the base font-size and line-height. Use a larger minimum height to have more initial rows and once enough text lines are entered the textarea will auto expand from that point on as expected.</p>
+
+<div class="highlight highlight-css"><pre>  <span class="nt">textarea</span> <span class="p">{</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+    <span class="k">max-height</span><span class="o">:</span> <span class="m">94px</span><span class="p">;</span>
+    <span class="k">min-height</span><span class="o">:</span> <span class="m">31px</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>The <code>max-height</code> style is only necessary if you don't want the textarea to grow past a certain point.</p>
+
+<h2>
+<a name="browsers-tested" class="anchor" href="#browsers-tested"><span class="octicon octicon-link"></span></a>Browsers Tested</h2>
+
+<p>Unless specified, all browsers listed were the latest versions.</p>
+
+<ul>
+<li>Mac
+
+<ul>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Firefox</li>
+<li>IE9-10 (using VirtualBox and <a href="https://github.com/xdissent/ievms">ievms</a>)</li>
+</ul>
+</li>
+<li>Windows
+
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/javierjulio">javierjulio</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="gh-pages-assets/javascripts/scale.fix.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="dist/jquery.textarea_auto_expand.js"></script>
+    <script>
+      $('textarea.js-auto-expand').textareaAutoExpand();
+    </script>
+  </body>
+</html>
