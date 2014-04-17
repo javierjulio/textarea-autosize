@@ -183,12 +183,6 @@ footer {
   bottom:50px;
 }
 
-textarea {
-  box-sizing: border-box;
-  max-height: 94px;
-  min-height: 31px;
-}
-
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
@@ -258,4 +252,32 @@ textarea {
     font-size:12pt;
     color:#444;
   }
+}
+
+
+
+textarea {border: 1px solid #d9d9d9; border-radius: 3px; font-size: inherit; margin: 0; overflow: auto;}
+textarea:focus {border-color: rgba(82, 168, 236, 0.8); box-shadow: 0 0 6px rgba(102, 175, 233, .6); outline: 0;}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+textarea {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 6px 8px;
+}
+
+.single-line {
+  min-height: 31px;
+  max-height: 94px;
+  width: 250px;
+}
+
+.multiple-lines {
+  min-height: 66px;
+  max-height: 150px;
+  width: 250px;
 }
