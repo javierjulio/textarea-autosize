@@ -145,3 +145,44 @@ textarea {
   min-height: 66px;
   max-height: 150px;
 }
+
+.ribbon{
+  position: absolute; 
+  top: 50px;
+  width: 230px;
+  padding: 1px 0;
+  background: #000;
+  color: #eee;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.ribbon.left{
+  left: -50px;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.ribbon a, 
+.ribbon a:visited, 
+.ribbon a:active, 
+.ribbon a:hover{
+  display: block;
+  padding: 5px 0;
+  color: inherit;  
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+  -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+  text-shadow: 0 0 10px rgba(0,0,0,0.31);
+}
+
+.ribbon.blue{
+  background: #09e;
+}
