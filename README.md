@@ -37,6 +37,10 @@ textarea {
 * Mozilla Firefox (latest)
 * Internet Explorer 9+ (using [ievms](https://github.com/xdissent/ievms))
 
+## Update gh-pages
+
+      git push -f origin origin/master:gh-pages
+
 ## Resources
 
 * https://github.com/theproductguy/BetterGrow
