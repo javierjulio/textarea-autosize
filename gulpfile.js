@@ -66,7 +66,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('browser', ['server'], function() {
-  child_process.spawn('open', ['http://localhost:3000/examples/']);
+  child_process.spawn('open', ['http://localhost:3000/index.html']);
 });
 
 gulp.task('test', ['lint', 'mocha']);
