@@ -37,8 +37,9 @@ textarea {
 * Mozilla Firefox (latest)
 * Internet Explorer 9+ (using [ievms](https://github.com/xdissent/ievms))
 
-## Update gh-pages
+## Update GitHub Project Page
 
+      git push origin master
       git push -f origin origin/master:gh-pages
 
 ## Resources
