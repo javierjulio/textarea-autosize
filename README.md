@@ -8,13 +8,15 @@ So why build this? Many solutions didn't feel smooth. In some the textarea would
 
 Load the plugin and use jQuery to find the desired `textarea` elements on which to call the plugin method.
 
-    <textarea class="js-auto-expand" rows="1"></textarea>
+  ```html
+  <textarea class="js-auto-expand" rows="1"></textarea>
 
-    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="jquery.textarea_auto_expand.min.js"></script>
-    <script>
-      $('textarea.js-auto-expand').textareaAutoExpand();
-    </script>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="jquery.textarea_auto_expand.min.js"></script>
+  <script>
+    $('textarea.js-auto-expand').textareaAutoExpand();
+  </script>
+  ```
 
 Use a desired default number of text rows in conjunction with the required CSS below.
 
@@ -22,11 +24,13 @@ Use a desired default number of text rows in conjunction with the required CSS b
 
 Set the `textarea` to `box-sizing: border-box` and give it a `min-height`. In the example below, the minimum height is one line of text which is determined from the base font-size and line-height. Use a larger minimum height to have more initial rows and once enough text lines are entered the textarea will auto expand from that point on as expected.
 
-    textarea {
-      box-sizing: border-box;
-      max-height: 94px;
-      min-height: 31px;
-    }
+  ```css
+  textarea {
+    box-sizing: border-box;
+    max-height: 94px;
+    min-height: 31px;
+  }
+  ```
 
 The `max-height` style is only necessary if you don't want the textarea to grow past a certain point.
 
