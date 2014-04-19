@@ -1,4 +1,4 @@
-# textarea-auto-expand
+# textarea-autosize
 
 This is a jQuery plugin for enabling vertically adjusting textarea's through user input *without* using a clone or ghost element.
 
@@ -12,7 +12,7 @@ Load the plugin and use jQuery to find the desired `textarea` elements on which 
 <textarea class="js-auto-expand" rows="1"></textarea>
 
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script src="jquery.textarea_auto_expand.min.js"></script>
+<script src="jquery.textarea_autosize.min.js"></script>
 <script>
   $('textarea.js-auto-expand').textareaAutoExpand();
 </script>

@@ -1,11 +1,11 @@
 /*!
- * jQuery Textarea Auto Expand plugin
+ * jQuery Textarea AutoSize plugin
  * Author: Javier Julio
  * Licensed under the MIT license
  */
 ;(function ($, window, document, undefined) {
 
-  var pluginName = "textareaAutoExpand";
+  var pluginName = "textareaAutoSize";
   var pluginDataName = "plugin_" + pluginName;
 
   var containsText = function (value) {

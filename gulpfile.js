@@ -20,9 +20,9 @@ gulp.task('lint', function () {
 });
 
 gulp.task('build', ['lint'], function () {
-  gulp.src('./src/jquery.textarea_auto_expand.js')
+  gulp.src('./src/jquery.textarea_autosize.js')
     .pipe(gulp.dest('./dist'))
-    .pipe(rename('jquery.textarea_auto_expand.min.js'))
+    .pipe(rename('jquery.textarea_autosize.min.js'))
     .pipe(uglify())
     .pipe(size({showFiles: true}))
     .pipe(gulp.dest('./dist'));
