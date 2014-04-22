@@ -18,7 +18,7 @@ Load the plugin and use jQuery to find the desired `textarea` elements on which 
 </script>
 ```
 
-### CSS Requirements
+### Minimum CSS Requirements
 
 Set the `textarea` to `box-sizing: border-box` and give it a `min-height`. In the example below, the minimum height is one line of text which is determined from the base font size and line height. Increase it to have more initial rows. Once input exceeds in minimum the textarea will expand.
 
@@ -28,6 +28,14 @@ textarea {
   max-height: 94px; /* optional */
   min-height: 31px;
 }
+```
+
+### Updating Textarea Content
+
+If you pre-fill the textarea before page load the textarea will adjust to fit automatically but if given a value after page load (e.g. single page app) then you will need to trigger an input event on the textarea after setting its value for it to size correctly.
+
+```js
+textarea.val('A test comment.').trigger('input');
 ```
 
 ## Browser Support
