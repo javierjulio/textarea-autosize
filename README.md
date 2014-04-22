@@ -4,6 +4,34 @@ This is a jQuery plugin for enabling vertically adjusting textarea's through use
 
 So why build this? Many solutions didn't feel smooth. In some the textarea would flicker on entering new lines with a noticeable delay in resizing. Most were outdated and all were a lot bulkier than they had to be. Many had to use a mirror textarea or ghost element with some needing presentation values set in script. I wanted just the behavior in the script. Anything regarding presentation should be in CSS.
 
+## Installation
+
+### NPM
+
+```
+npm install textarea-autosize
+```
+
+### [Bower](http://bower.io)
+
+```
+bower install textarea-autosize
+```
+
+Or add `textarea-autosize` to your application's `bower.json`.
+
+```json
+  "dependencies": {
+    "textarea-autosize": "latest"
+  }
+```
+
+### Standalone
+
+```
+curl -O https://raw.github.com/javierjulio/textarea-autosize/master/dist/jquery.textarea_autosize.js
+```
+
 ## Usage
 
 Load the plugin and use jQuery to find the desired `textarea` elements on which to call the plugin method.
