@@ -123,6 +123,37 @@ hr {
   margin: 50px 0;
 }
 
+.btn {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #39c;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  border-color: rgba(0, 0, 0, 0.195);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, .1);
+}
+
 .site-footer {
   text-align: center;
 }
