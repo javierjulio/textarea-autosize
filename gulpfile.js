@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var size = require('gulp-size');
 var child_process = require('child_process');
 var connect = require('connect');
+var mocha = require('gulp-mocha');
 
 var BUMP_TYPES = ['major', 'minor', 'patch', 'prerelease'];
 
@@ -17,6 +18,11 @@ gulp.task('lint', function () {
   gulp.src('./src/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
+});
+
+gulp.task('mocha', function () {
+  gulp.src('./test/*.js')
+    .pipe(mocha({ reporter: 'list' }));
 });
 
 gulp.task('build', ['lint'], function () {
