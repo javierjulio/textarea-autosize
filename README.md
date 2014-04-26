@@ -73,6 +73,20 @@ textarea.val('A test comment.').trigger('input');
 * Mozilla Firefox (latest)
 * Internet Explorer 9+ (using [ievms](https://github.com/xdissent/ievms))
 
+## Contributions
+
+Project setup:
+
+```
+npm install
+```
+
+Run tests:
+
+```
+npm test
+```
+
 ## Update GitHub Project Page
 
       git push origin master
