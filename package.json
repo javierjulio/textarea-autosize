@@ -16,18 +16,20 @@
     "jquery": ">=1.8"
   },
   "devDependencies": {
+    "chai": "^1.9.1",
+    "connect": "^2.13.0",
     "gulp": "~3.6.0",
+    "gulp-bump": "~0.1.5",
+    "gulp-clean": "~0.2.4",
     "gulp-concat": "~2.2.0",
+    "gulp-git": "~0.3.2",
+    "gulp-jshint": "~1.5.0",
+    "gulp-mocha": "^0.4.1",
+    "gulp-mocha-phantomjs": "^0.1.5",
     "gulp-rename": "~1.2.0",
     "gulp-size": "~0.3.0",
-    "gulp-bump": "~0.1.5",
     "gulp-uglify": "~0.2.1",
-    "gulp-git": "~0.3.2",
-    "gulp-clean": "~0.2.4",
-    "gulp-jshint": "~1.5.0",
     "gulp-util": "~2.2.14",
-    "connect": "^2.13.0",
-    "gulp-mocha": "^0.4.1",
     "mocha": "^1.18.2"
   },
   "scripts": {
