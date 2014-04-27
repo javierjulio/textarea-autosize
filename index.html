@@ -20,7 +20,7 @@
 
     <hr>
 
-    <p class="primary-demo"><textarea class="single-line js-auto-expand" rows="1" autofocus></textarea></p>
+    <p class="primary-demo"><textarea class="single-line js-auto-size" rows="1" autofocus></textarea></p>
 
     <nav class="demo-options js-textarea-demo-options">
       <a href="#">Single Line</a>
@@ -29,12 +29,12 @@
     </nav>
 
     <p>Sample HTML:</p>
-    <div class="highlight highlight-html"><pre><span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"js-auto-expand"</span> <span class="na">rows=</span><span class="s">"1"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+    <div class="highlight highlight-html"><pre><span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"js-auto-size"</span> <span class="na">rows=</span><span class="s">"1"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
 
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-2.1.0.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.textarea_autosize.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'textarea.js-auto-expand'</span><span class="p">).</span><span class="nx">textareaAutoExpand</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'textarea.js-auto-size'</span><span class="p">).</span><span class="nx">textareaAutoSize</span><span class="p">();</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
@@ -64,11 +64,11 @@
   <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="dist/jquery.textarea_autosize.js"></script>
   <script>
-    $('textarea.js-auto-expand').textareaAutoSize();
+    $('textarea.js-auto-size').textareaAutoSize();
     $(document).on('click', '.js-textarea-demo-options a', function(event) {
       link = $(this);
       linkIndex = link.index()
-      textarea = $('textarea.js-auto-expand');
+      textarea = $('textarea.js-auto-size');
 
       textarea.removeClass('single-line multiple-lines');
 
