@@ -48,7 +48,7 @@ Load the plugin and use jQuery to find the desired `textarea` elements on which 
 
 ### Minimum CSS Requirements
 
-Set the `textarea` to `box-sizing: border-box` and give it a `min-height`. In the example below, the minimum height is one line of text which is determined from the base font size and line height. Increase it to have more initial rows. Once input exceeds in minimum the textarea will expand.
+The only requirement is to set `box-sizing: border-box` and a `min-height` on the textarea. In the example below, the minimum height is one line of text which is determined from the base font size, line height, and vertical padding and border.
 
 ```css
 textarea {
@@ -57,6 +57,8 @@ textarea {
   min-height: 31px;
 }
 ```
+
+Increase the `min-height` to have more initial rows. Once input exceeds that minimum height the textarea will expand.
 
 ### Updating Textarea Content
 
