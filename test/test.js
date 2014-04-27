@@ -8,6 +8,20 @@ describe('Array', function(){
   });
 });
 
+// font size * line height + top/bottom padding + top/bottom border
+// (16 * 1.4) + (6 * 2) + 2
+
+function getLineHeight(textarea) {
+  return parseInt(textarea.css('line-height'));
+}
+
+function spacingHeight(textarea) {
+  return parseInt(textarea.css('paddingBottom')) +
+    parseInt(textarea.css('paddingTop')) + 
+    parseInt(textarea.css('borderBottomWidth')) + 
+    parseInt(textarea.css('borderTopWidth'));
+}
+
 describe("DOM Tests", function () {
   var el, myEl;
   
@@ -19,6 +33,28 @@ describe("DOM Tests", function () {
     document.body.appendChild(el);
     
     myEl = document.getElementById('myDiv');
+  });
+
+  it('has a rendered height of one line with no text', function() {
+    var textarea = $("#js-single-line-textarea").textareaAutoSize();
+    
+    expect(textarea.val()).to.equal('');
+    expect(textarea.outerHeight()).to.equal(36);
+  });
+
+  it('has a rendered height of 2 lines when large enough text entered', function() {
+    var textarea = $("#js-single-line-textarea").textareaAutoSize();
+    textarea.val('this is a test with a really long entry').trigger('input');
+    
+    expect(textarea.outerHeight()).to.equal(58);
+  });
+
+  it('resizes to one line when deleting all text', function() {
+    var textarea = $("#js-single-line-textarea").textareaAutoSize();
+    textarea.val('').trigger('input');
+    
+    expect(textarea.outerHeight()).to.equal(36);
+    expect(textarea.val()).to.equal('');
   });
 
   it("is in the DOM", function () {
