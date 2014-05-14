@@ -15,8 +15,11 @@ function spacingHeight(textarea) {
 describe("TextArea", function () {
   var textarea;
   
-  before(function(){
-    textarea = $("#js-single-line-textarea").textareaAutoSize();
+  beforeEach(function(){
+    textarea = $("#js-single-line-textarea")
+      .val('')
+      .css('maxHeight', '')
+      .textareaAutoSize();
   });
 
   it('has a rendered height of one line with no text', function() {
