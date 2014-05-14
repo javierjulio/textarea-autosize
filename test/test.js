@@ -39,4 +39,15 @@ describe("TextArea", function () {
     expect(textarea.outerHeight()).to.equal(36);
     expect(textarea.val()).to.equal('');
   });
+  
+  it('stops resizing when given max height is reached', function() {
+    var maxHeight = 100;
+    textarea.css('maxHeight', maxHeight + 'px');
+    textarea.val('this is a test with a really long entry this is a test with a really long entry this is a test with a really long entry this is a test with a really long entry').trigger('input');
+    
+    expect(textarea.outerHeight()).to.equal(maxHeight);
+    
+    // double check that text has exceeded height and textarea is scrollable
+    expect(textarea.get(0).scrollHeight).to.be.above(maxHeight);
+  });
 });
