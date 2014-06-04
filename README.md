@@ -81,7 +81,10 @@ Project setup: `npm install`
 
 Run tests: `npm test`
 
-Deploy new release: `gulp release --bump [major,minor,patch]`
+### Deploy New Release
+
+      gulp bump --type [major,minor,patch]
+      gulp release
 
 ### Update GitHub Project Page
 
