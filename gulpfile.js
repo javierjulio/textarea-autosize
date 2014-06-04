@@ -53,12 +53,11 @@ gulp.task('tag', ['build'], function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
-
-  return gulp.src('./')
-    .pipe(git.commit(message))
-    .pipe(git.tag(v, message))
-    .pipe(git.push('origin', 'master', '--tags'))
-    .pipe(gulp.dest('./'));
+  
+  var exec = require('child_process').exec;
+  exec('git commit -a -m "' + message + '"', function (error, stdout, stderr) {});
+  exec('git tag -a -m "' + message + '"', function (error, stdout, stderr) {});
+  exec('git push origin --tags', function (error, stdout, stderr) {});
 });
 
 gulp.task('npm', ['tag'], function (done) {
