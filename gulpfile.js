@@ -56,7 +56,7 @@ gulp.task('tag', ['build'], function () {
   
   var exec = require('child_process').exec;
   exec('git commit -a -m "' + message + '"', function (error, stdout, stderr) {});
-  exec('git tag -a -m "' + message + '"', function (error, stdout, stderr) {});
+  exec('git tag -a "' + v + '" -m "' + message + '"', function (error, stdout, stderr) {});
   exec('git push origin --tags', function (error, stdout, stderr) {});
 });
 
