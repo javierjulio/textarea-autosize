@@ -90,7 +90,7 @@ Deploy new release: `gulp release --bump [major,minor,patch]`
 
 ## Version History
 
-**0.1.1** (June 3, 2014)
+**0.2.0** (June 3, 2014)
 
  * Minor README changes
  * Updated gulp related dev dependencies
