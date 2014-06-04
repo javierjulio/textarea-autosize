@@ -77,19 +77,13 @@ textarea.val('A test comment.').trigger('input');
 
 ## Contributions
 
-Project setup:
+Project setup: `npm install`
 
-```
-npm install
-```
+Run tests: `npm test`
 
-Run tests:
+Deploy new release: `gulp release --bump [major,minor,patch]`
 
-```
-npm test
-```
-
-## Update GitHub Project Page
+### Update GitHub Project Page
 
       git push origin master
       git push -f origin origin/master:gh-pages
