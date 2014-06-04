@@ -8,7 +8,6 @@ var clean = require('gulp-clean');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
-var child_process = require('child_process');
 var connect = require('connect');
 var mocha = require('gulp-mocha');
 var mochaPhantomJS = require('gulp-mocha-phantomjs');
@@ -40,17 +39,17 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('validation', function () {
-  if (BUMP_TYPES.indexOf(gutil.env.bump) == -1)
-    throw new Error('\nbump argument is required for gulp release\nSupported values: major, minor, patch, prerelease\n\nExample:\n\tgulp release --bump major');
+  if (BUMP_TYPES.indexOf(gutil.env.type) == -1)
+    throw new Error('\ntype argument is required for gulp bump\nSupported values: major, minor, patch, prerelease\n\nExample:\n\tgulp bump --type major');
 });
 
 gulp.task('bump', ['validation', 'build'], function () {
-  return gulp.src(['./package.json'])
-    .pipe(bump({type: gutil.env.bump}))
+  return gulp.src(['./package.json', './bower.json'])
+    .pipe(bump({type: gutil.env.type}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('tag', ['bump'], function () {
+gulp.task('tag', ['build'], function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
@@ -63,7 +62,7 @@ gulp.task('tag', ['bump'], function () {
 });
 
 gulp.task('npm', ['tag'], function (done) {
-  child_process
+  require('child_process')
     .spawn('npm', ['publish'], { stdio: 'inherit' })
     .on('close', done);
 });
@@ -78,6 +77,6 @@ gulp.task('browser', ['server'], function() {
 
 gulp.task('test', ['lint', 'mocha']);
 gulp.task('ci', ['build']);
-gulp.task('release', ['validation', 'bump', 'npm']);
+gulp.task('release', ['npm']);
 
 gulp.task('default', ['watch', 'browser']);
