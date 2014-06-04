@@ -88,6 +88,17 @@ Deploy new release: `gulp release --bump [major,minor,patch]`
       git push origin master
       git push -f origin origin/master:gh-pages
 
+## Version History
+
+**0.1.1** (June 3, 2014)
+
+ * Minor README changes
+ * Updated gulp related dev dependencies
+
+**0.1.0** (April 19, 2014)
+
+ * Initial release
+
 ## Resources
 
 * https://github.com/theproductguy/BetterGrow
