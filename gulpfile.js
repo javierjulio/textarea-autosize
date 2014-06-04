@@ -78,7 +78,6 @@ gulp.task('browser', ['server'], function() {
 
 gulp.task('test', ['lint', 'mocha']);
 gulp.task('ci', ['build']);
-//gulp.task('release', ['validation', 'npm']);
-gulp.task('release', ['validation', 'bump']);
+gulp.task('release', ['validation', 'bump', 'npm']);
 
 gulp.task('default', ['watch', 'browser']);
