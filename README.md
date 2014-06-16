@@ -42,7 +42,7 @@ Load the plugin and use jQuery to find the desired `textarea` elements on which 
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="jquery.textarea_autosize.min.js"></script>
 <script>
-  $('textarea.js-auto-size').textareaAutoExpand();
+  $('textarea.js-auto-size').textareaAutoSize();
 </script>
 ```
 
