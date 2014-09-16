@@ -1,3 +1,12 @@
+$font-size: 16px;
+$line-height: 1.5;
+$textarea-vertical-padding: 8px;
+
+// Calculation: (font-size * line-height * num of lines) + (top and bottom padding)
+$single-line-max-height: ($font-size * $line-height * 6) + ($textarea-vertical-padding * 2);
+$multiple-lines-max-height: ($font-size * $line-height * 6) + ($textarea-vertical-padding * 2);
+
+
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
@@ -169,12 +178,12 @@ textarea {
 
 .single-line {
   min-height: 31px;
-  max-height: 150px;
+  max-height: $single-line-max-height;
 }
 
 .multiple-lines {
   min-height: 66px;
-  max-height: 150px;
+  max-height: $multiple-lines-max-height
 }
 
 .ribbon{

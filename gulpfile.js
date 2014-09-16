@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bump = require('gulp-bump');
 var git = require('gulp-git');
+var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var clean = require('gulp-clean');
 var rename = require('gulp-rename');
@@ -26,6 +27,12 @@ gulp.task('mocha', function () {
           .pipe(mochaPhantomJS({reporter: 'list'}));
 });
 
+gulp.task('build-stylesheets', function() {
+  return gulp.src('./gh-pages-assets/stylesheets/*.scss')
+    .pipe(sass({ includePaths: ['./gh-pages-assets/stylesheets'] }))
+    .pipe(gulp.dest('./gh-pages-assets'));
+});
+
 gulp.task('build', ['lint'], function () {
   gulp.src('./src/jquery.textarea_autosize.js')
     .pipe(gulp.dest('./dist'))
@@ -35,8 +42,9 @@ gulp.task('build', ['lint'], function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', ['build'], function() {
-  return gulp.watch('src/*.js', ['build']);
+gulp.task('watch', ['build', 'build-stylesheets'], function() {
+  gulp.watch('./gh-pages-assets/stylesheets/*.scss', ['build-stylesheets']);
+  gulp.watch('src/*.js', ['build']);
 });
 
 gulp.task('validation', function () {
@@ -44,13 +52,13 @@ gulp.task('validation', function () {
     throw new Error('\ntype argument is required for gulp bump\nSupported values: major, minor, patch, prerelease\n\nExample:\n\tgulp bump --type major');
 });
 
-gulp.task('bump', ['validation', 'build'], function () {
+gulp.task('bump', ['validation', 'build', 'build-stylesheets'], function () {
   return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: gutil.env.type}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('tag', ['build'], function () {
+gulp.task('tag', ['build', 'build-stylesheets'], function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
@@ -76,7 +84,7 @@ gulp.task('browser', ['server'], function() {
 });
 
 gulp.task('test', ['lint', 'mocha']);
-gulp.task('ci', ['build']);
+gulp.task('ci', ['build', 'build-stylesheets']);
 gulp.task('release', ['npm']);
 
 gulp.task('default', ['watch', 'browser']);
