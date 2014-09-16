@@ -33,7 +33,7 @@ gulp.task('build-stylesheets', function() {
     .pipe(gulp.dest('./gh-pages-assets'));
 });
 
-gulp.task('build', ['lint'], function () {
+gulp.task('build-scripts', ['lint'], function () {
   gulp.src('./src/jquery.textarea_autosize.js')
     .pipe(gulp.dest('./dist'))
     .pipe(rename('jquery.textarea_autosize.min.js'))
@@ -42,9 +42,9 @@ gulp.task('build', ['lint'], function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', ['build', 'build-stylesheets'], function() {
+gulp.task('watch', ['build-scripts', 'build-stylesheets'], function() {
   gulp.watch('./gh-pages-assets/stylesheets/*.scss', ['build-stylesheets']);
-  gulp.watch('src/*.js', ['build']);
+  gulp.watch('src/*.js', ['build-scripts']);
 });
 
 gulp.task('validation', function () {
@@ -52,13 +52,13 @@ gulp.task('validation', function () {
     throw new Error('\ntype argument is required for gulp bump\nSupported values: major, minor, patch, prerelease\n\nExample:\n\tgulp bump --type major');
 });
 
-gulp.task('bump', ['validation', 'build', 'build-stylesheets'], function () {
+gulp.task('bump', ['validation', 'build-scripts', 'build-stylesheets'], function () {
   return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: gutil.env.type}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('tag', ['build', 'build-stylesheets'], function () {
+gulp.task('tag', ['build-scripts', 'build-stylesheets'], function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
@@ -84,7 +84,7 @@ gulp.task('browser', ['server'], function() {
 });
 
 gulp.task('test', ['lint', 'mocha']);
-gulp.task('ci', ['build', 'build-stylesheets']);
+gulp.task('ci', ['build-scripts', 'build-stylesheets']);
 gulp.task('release', ['npm']);
 
 gulp.task('default', ['watch', 'browser']);
