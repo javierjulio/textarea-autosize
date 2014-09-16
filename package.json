@@ -27,6 +27,7 @@
     "gulp-mocha": "^0.4.1",
     "gulp-mocha-phantomjs": "^0.2.0",
     "gulp-rename": "~1.2.0",
+    "gulp-sass": "^0.7.3",
     "gulp-size": "~0.3.0",
     "gulp-uglify": "~0.3.0",
     "gulp-util": "~2.2.14",
