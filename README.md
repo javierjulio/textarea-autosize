@@ -93,6 +93,10 @@ Run tests: `npm test`
 
 ## Version History
 
+**0.3.0** (September 15, 2014)
+
+ * Updated demo to use SASS
+
 **0.2.0** (June 3, 2014)
 
  * Minor README changes

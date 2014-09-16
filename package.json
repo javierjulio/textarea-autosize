@@ -1,6 +1,6 @@
 {
   "name": "textarea-autosize",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Javier Julio",
     "email": "jjfutbol@gmail.com",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "connect": "^2.13.0",
-    "gulp": "~3.7.0",
+    "gulp": "^3.8.8",
     "gulp-bump": "~0.1.5",
     "gulp-clean": "~0.3.0",
     "gulp-concat": "~2.2.0",
