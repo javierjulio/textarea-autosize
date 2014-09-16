@@ -11,6 +11,7 @@ var size = require('gulp-size');
 var connect = require('connect');
 var mocha = require('gulp-mocha');
 var mochaPhantomJS = require('gulp-mocha-phantomjs');
+var childProcess = require('child_process')
 
 var BUMP_TYPES = ['major', 'minor', 'patch', 'prerelease'];
 
@@ -61,7 +62,7 @@ gulp.task('tag', ['build'], function () {
 });
 
 gulp.task('npm', ['tag'], function (done) {
-  require('child_process')
+  childProcess
     .spawn('npm', ['publish'], { stdio: 'inherit' })
     .on('close', done);
 });
@@ -71,7 +72,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('browser', ['server'], function() {
-  child_process.spawn('open', ['http://localhost:3000/index.html']);
+  childProcess.spawn('open', ['http://localhost:3000/index.html']);
 });
 
 gulp.task('test', ['lint', 'mocha']);
