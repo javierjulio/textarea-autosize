@@ -53,14 +53,14 @@ pre {
 }
 
 @media print, screen and (max-width: 960px) {
-  
+
 }
 
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
   }
-  
+
   pre, code {
     word-wrap:normal;
   }
@@ -85,6 +85,7 @@ pre {
 body {
   color: #555;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: $font-size;
   line-height: 1.5;
   padding: 70px 0;
 }
@@ -177,17 +178,17 @@ textarea {
 }
 
 .single-line {
-  min-height: 31px;
+  min-height: 38px;
   max-height: $single-line-max-height;
 }
 
 .multiple-lines {
-  min-height: 66px;
+  min-height: 86px;
   max-height: $multiple-lines-max-height
 }
 
 .ribbon{
-  position: absolute; 
+  position: absolute;
   top: 50px;
   width: 230px;
   padding: 1px 0;
@@ -207,13 +208,13 @@ textarea {
   transform: rotate(-45deg);
 }
 
-.ribbon a, 
-.ribbon a:visited, 
-.ribbon a:active, 
+.ribbon a,
+.ribbon a:visited,
+.ribbon a:active,
 .ribbon a:hover{
   display: block;
   padding: 5px 0;
-  color: inherit;  
+  color: inherit;
   text-align: center;
   text-decoration: none;
   font-size: 14px;

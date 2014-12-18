@@ -658,6 +658,7 @@ pre {
 body {
   color: #555;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.5;
   padding: 70px 0; }
 
@@ -741,11 +742,11 @@ textarea {
   padding: 6px 8px; }
 
 .single-line {
-  min-height: 31px;
+  min-height: 38px;
   max-height: 160px; }
 
 .multiple-lines {
-  min-height: 66px;
+  min-height: 86px;
   max-height: 160px; }
 
 .ribbon {
