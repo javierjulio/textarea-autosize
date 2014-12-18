@@ -70,6 +70,8 @@ textarea.val('A test comment.').trigger('input');
 
 ## Browser Support
 
+These are the browsers I've tested against. These are not requirements.
+
 * Google Chrome (latest)
 * Apple Safari 6+
 * Mozilla Firefox (latest)
@@ -92,6 +94,12 @@ Run tests: `npm test`
       git push -f origin origin/master:gh-pages
 
 ## Version History
+
+**0.4.0** (Pending...)
+
+ * Preserving window scroll position whenever textarea height changes
+ * Removed code that accounted for Firefox height issue
+ * Updated demo sample code to reflect values used for single line textarea
 
 **0.3.0** (September 15, 2014)
 
