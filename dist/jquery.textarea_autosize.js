@@ -24,13 +24,8 @@
       var diff = parseInt(this.$element.css('paddingBottom')) +
                   parseInt(this.$element.css('paddingTop'));
 
-      // Firefox: scrollHeight isn't full height on border-box
-      if (this.element.scrollHeight + diff <= height) {
-        diff = 0;
-      }
-
       if (containsText(this.element.value)) {
-        this.$element.height(this.element.scrollHeight);
+        this.$element.height(this.element.scrollHeight - diff);
       }
 
       // keyup is required for IE to properly reset height when deleting text
@@ -39,7 +34,7 @@
         var currentScrollPosition = $window.scrollTop();
 
         $(this)
-          .height('auto')
+          .height(0)
           .height(this.scrollHeight - diff);
 
         $window.scrollTop(currentScrollPosition);

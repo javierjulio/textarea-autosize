@@ -62,7 +62,7 @@ gulp.task('tag', ['build-scripts', 'build-stylesheets'], function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
-  
+
   var exec = require('child_process').exec;
   exec('git commit -a -m "' + message + '"', function (error, stdout, stderr) {});
   exec('git tag -a "' + v + '" -m "' + message + '"', function (error, stdout, stderr) {});
