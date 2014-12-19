@@ -739,6 +739,7 @@ textarea:focus {
 textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: hidden;
   padding: 6px 8px; }
 
 .single-line {
