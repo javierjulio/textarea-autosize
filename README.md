@@ -1,8 +1,8 @@
 # textarea-autosize
 
-This is a jQuery plugin for enabling vertically adjusting textarea's through user input *without* using a clone or ghost element.
+This is a jQuery plugin for vertically adjusting a textarea based on user input and controlling any presentation in CSS. <strong>No clone or ghost elements</strong> used. &#x1f609;
 
-So why build this? Many solutions didn't feel smooth. In some the textarea would flicker on entering new lines with a noticeable delay in resizing. Most were outdated and all were a lot bulkier than they had to be. Many had to use a mirror textarea or ghost element with some needing presentation values set in script. I wanted just the behavior in the script. Anything regarding presentation should be in CSS.
+So why build this? Many solutions didn't feel smooth. In some the textarea would flicker on entering new lines with a noticeable delay in resizing. Most were outdated and all were a lot bulkier than they had to be. Many had to use a mirror textarea or ghost element with some needing presentation values set in script. I wanted just the behavior in the script and anything regarding presentation should be controlled through CSS.
 
 ## Installation
 
@@ -53,12 +53,13 @@ The only requirement is to set `box-sizing: border-box` and a `min-height` on th
 ```css
 textarea {
   box-sizing: border-box;
-  max-height: 94px; /* optional */
+  max-height: 94px; /* optional, but recommended */
   min-height: 31px;
+  overflow-x: hidden; /* for Firefox (issue #5) */
 }
 ```
 
-Increase the `min-height` to have more initial rows. Once input exceeds that minimum height the textarea will expand.
+Increase the `min-height` to have more initial rows. Once text exceeds that minimum height the textarea will expand naturally. The [overflow-x setting is for Firefox](https://github.com/javierjulio/textarea-autosize/issues/5) to prevent an initial additional line from appearing.
 
 ### Updating Textarea Content
 
@@ -97,7 +98,8 @@ Run tests: `npm test`
 
 **0.4.0** (Pending...)
 
- * Preserving window scroll position whenever textarea height changes
+ * Preserving window scroll position whenever textarea height changes ([Issue #6](https://github.com/javierjulio/textarea-autosize/issues/6))
+ * Updated suggested CSS to include overflow-x hidden ([Issue #5](https://github.com/javierjulio/textarea-autosize/issues/5))
  * Removed code that accounted for Firefox height issue
  * Updated demo sample code to reflect values used for single line textarea
 

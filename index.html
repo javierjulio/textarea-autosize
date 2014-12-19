@@ -15,7 +15,7 @@
   <div class="container">
     <h1 class="logo">Textarea AutoSize</h1>
 
-    <p class="project-about">Vertically adjust a textarea based on user input and control all presentation in CSS. <strong>No clone or ghost elements</strong> used.</p>
+    <p class="project-about">Vertically adjust a textarea based on user input and control all presentation in CSS. <strong>No clone or ghost elements</strong> used. &#x1f609;</p>
 
     <hr>
 
@@ -39,13 +39,14 @@
 
     <p>Minimum required CSS:</p>
     <div class="highlight highlight-css"><pre><span class="nt">textarea</span> <span class="p">{</span>
-  <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-  <span class="k">max-height</span><span class="o">:</span> <span class="m">160px</span><span class="p">;</span>
+  <span class="k">box-sizing</span><span class="o">:</span> <span class="s">border-box</span><span class="p">;</span>
+  <span class="k">max-height</span><span class="o">:</span> <span class="m">160px</span><span class="p">;</span> <span class="c">// optional but recommended</span>
   <span class="k">min-height</span><span class="o">:</span> <span class="m">38px</span><span class="p">;</span>
+  <span class="k">overflow-x</span><span class="o">:</span> <span class="s">hidden</span><span class="p">;</span> <span class="c">// for Firefox (issue #5)</span>
 <span class="p">}</span>
 </pre></div>
 
-    <p>The minimum and maximum heights above are determined based on font size and line height. The maximum height is optional.</p>
+    <p>The minimum and maximum heights above are determined based on font size and line height. The <a href="https://github.com/javierjulio/textarea-autosize/issues/5">overflow-x setting is for Firefox</a> to prevent an initial additional line from appearing.</p>
 
     <hr>
 
