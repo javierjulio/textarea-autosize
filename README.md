@@ -96,7 +96,7 @@ Run tests: `npm test`
 
 ## Version History
 
-**0.4.0** (Pending...)
+**0.4.0** (December 18, 2014)
 
  * Preserving window scroll position whenever textarea height changes ([Issue #6](https://github.com/javierjulio/textarea-autosize/issues/6))
  * Updated suggested CSS to include overflow-x hidden ([Issue #5](https://github.com/javierjulio/textarea-autosize/issues/5))
