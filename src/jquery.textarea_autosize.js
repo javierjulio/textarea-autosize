@@ -24,6 +24,8 @@
       var diff = parseInt(this.$element.css('paddingBottom')) +
                   parseInt(this.$element.css('paddingTop'));
 
+      diff = (diff) ? diff: 0;
+
       if (containsText(this.element.value)) {
         this.$element.height(this.element.scrollHeight - diff);
       }

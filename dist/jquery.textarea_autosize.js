@@ -24,9 +24,13 @@
       var diff = parseInt(this.$element.css('paddingBottom')) +
                   parseInt(this.$element.css('paddingTop'));
 
+      diff = (diff) ? diff: 0;
+
       if (containsText(this.element.value)) {
         this.$element.height(this.element.scrollHeight - diff);
       }
+
+      // this.$element.css('outline', '1px solid red');
 
       // keyup is required for IE to properly reset height when deleting text
       this.$element.on('input keyup', function(event) {
