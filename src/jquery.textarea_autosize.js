@@ -22,7 +22,7 @@
     init: function() {
       var height = this.$element.outerHeight();
       var diff = parseInt(this.$element.css('paddingBottom')) +
-                  parseInt(this.$element.css('paddingTop'));
+                 parseInt(this.$element.css('paddingTop')) || 0;
 
       if (containsText(this.element.value)) {
         this.$element.height(this.element.scrollHeight - diff);
