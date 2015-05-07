@@ -96,6 +96,10 @@ Run tests: `npm test`
 
 ## Version History
 
+**0.4.1** (May 7, 2015)
+
+ * Default to 0 if no vertical padding set (#11 - thanks @pedroha)
+
 **0.4.0** (December 18, 2014)
 
  * Preserving window scroll position whenever textarea height changes ([Issue #6](https://github.com/javierjulio/textarea-autosize/issues/6))
