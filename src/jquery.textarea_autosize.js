@@ -26,6 +26,8 @@
 
       if (containsText(this.element.value)) {
         this.$element.height(this.element.scrollHeight - diff);
+      } else {
+        this.$element.css('min-height', height);
       }
 
       // keyup is required for IE to properly reset height when deleting text
