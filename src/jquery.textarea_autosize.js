@@ -3,7 +3,6 @@
  * Author: Javier Julio
  * Licensed under the MIT license
  */
-///// removed unecessary semicolon before immediately invoked function
 (function ($, window, document, undefined) {
 
   var pluginName = "textareaAutoSize";
@@ -13,55 +12,51 @@
     return (value.replace(/\s/g, '').length > 0);
   };
 
-    // constructor function
   function Plugin(element, options) {
     this.element = element;
     this.$element = $(element);
-    this.options = options; ///// added options property to constructor
-    this.options === "destroy" ? this.destroy() : this.init(); ///// conditional calls
+    this.options = options; 
+    this.options === "destroy" ? this.destroy() : this.init();
   }
 
-    // prototype property
   Plugin.prototype = {
-      init: function () {
+    init: function () {
+      var diff = parseInt(this.$element.css('paddingBottom')) +
+                 parseInt(this.$element.css('paddingTop')) || 0;
 
-          // var height = this.$element.outerHeight(); ///// never used
-          var diff = parseInt(this.$element.css('paddingBottom')) +
-              parseInt(this.$element.css('paddingTop')) || 0;
-
-          if (containsText(this.element.value)) {
-              this.$element.height(this.element.scrollHeight - diff);
-          }
-
-          this.$element.addClass("autosize"); ///// added class for delegation selector
-
-          // keyup is required for IE to properly reset height when deleting text
-          $(document).on('input keyup', 'textarea.autosize', function () { ///// added document delegation
-              var $window = $(window);
-              var currentScrollPosition = $window.scrollTop();
-
-              $(this)
-                  .height(0)
-                  .height(this.scrollHeight - diff);
-
-              $window.scrollTop(currentScrollPosition);
-
-          });
-      },
-      destroy: function() { ///// added destroy method
-          // this.$element instead ????
-          $("textarea.autosize").off("input keyup").removeClass("autosize");
+      if (containsText(this.element.value)) {
+        this.$element.height(this.element.scrollHeight - diff);
       }
+
+      this.$element.addClass("autosize");
+
+      // keyup is required for IE to properly reset height when deleting text
+      $(document).on('input keyup', 'textarea.autosize', function () { 
+        var $window = $(window);
+        var currentScrollPosition = $window.scrollTop();
+
+        $(this)
+          .height(0)
+          .height(this.scrollHeight - diff);
+
+        $window.scrollTop(currentScrollPosition);
+
+      });
+    },      
+    destroy: function() {
+      $(document).off("input keyup", "textarea.autosize");
+      this.$element.removeClass("autosize");
+    }
   };
 
   $.fn[pluginName] = function (options) {
 
     return this.each(function() {
       if (!$.data(this, pluginDataName)) {
-        $.data(this, pluginDataName, new Plugin(this, options)); // constructor invocation
+        $.data(this, pluginDataName, new Plugin(this, options));
       }
     });
-    // return this; ////// each already returns this so returned each
+    // return this; ////// each already returns this
   };
 
 })(jQuery, window, document);
