@@ -86,8 +86,13 @@ Run tests: `npm test`
 
 ### Deploy New Release
 
-      gulp bump --type [major,minor,patch]
-      gulp release
+Replace {type} with any of the following: patch, minor or major
+
+```
+bower version {type} -m "Prep %s release for Bower"
+npm version {type} -m --no-git-tag-version "Prep %s release for NPM"
+git push origin --tags
+```
 
 ### Update GitHub Project Page
 
@@ -95,6 +100,11 @@ Run tests: `npm test`
       git push -f origin origin/master:gh-pages
 
 ## Version History
+
+**0.4.2** (March 30, 2016)
+
+ * Account for vertical border width (#18 - thanks @kulbakin)
+ * Remove unused variable (#16 - thanks @nomosyn)
 
 **0.4.1** (May 7, 2015)
 
