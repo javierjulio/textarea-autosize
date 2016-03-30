@@ -28,14 +28,14 @@
   },
   "scripts": {
     "start": "http-server -p 3000 -a localhost & open http://localhost:3000",
-    "lint": "jshint **.js",
+    "lint": "jshint src/*.js test/*.js",
     "css": "node-sass -w -r --output-style compressed gh-pages-assets/stylesheets/application.scss gh-pages-assets/application.css",
     "js": "uglifyjs src/jquery.textarea_autosize.js -c -m -o dist/jquery.textarea_autosize.min.js",
     "test": "mocha-phantomjs test/index.html --reporter list",
     "build": "npm run css & npm run lint && npm run js",
     "prepublish": "npm run build",
     "prestart": "npm run build",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint --silent"
   },
   "repository": {
     "type": "git",
