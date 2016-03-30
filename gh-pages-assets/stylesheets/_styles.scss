@@ -86,7 +86,7 @@ body {
   color: #555;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: $font-size;
-  line-height: 1.5;
+  line-height: $line-height;
   padding: 70px 0;
 }
 
@@ -127,7 +127,7 @@ strong {
 
 hr {
   background-color: #c0c8c9;
-  background-image: -webkit-linear-gradient(0deg, #fff, #c0c8c9, #fff);
+  background-image: linear-gradient(to right, #fff 0%, #c0c8c9 50%, #fff 100%);
   border: none;
   height: 1px;
   margin: 50px 0;
