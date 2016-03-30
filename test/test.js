@@ -30,13 +30,13 @@ describe("TextArea", function () {
   it('has a rendered height of 2 lines when large enough text entered', function() {
     textarea.val('this is a test with a really long entry').trigger('input');
 
-    expect(textarea.outerHeight()).to.equal(58);
+    expect(textarea.outerHeight()).to.equal(56);
   });
 
   it('resizes to one line when deleting all text', function() {
     textarea.val('').trigger('input');
 
-    expect(textarea.outerHeight()).to.equal(36);
+    expect(textarea.outerHeight()).to.equal(34);
     expect(textarea.val()).to.equal('');
   });
 
@@ -54,12 +54,12 @@ describe("TextArea", function () {
   it('maintains scroll position after textarea updates', function() {
     textarea.val('').trigger('input');
 
-    expect(textarea.outerHeight()).to.equal(36);
+    expect(textarea.outerHeight()).to.equal(34);
 
     var currentScrollPosition = $(window).scrollTop();
 
     textarea.val('this is a test with a really long entry').trigger('input');
-    expect(textarea.outerHeight()).to.equal(58);
+    expect(textarea.outerHeight()).to.equal(56);
 
     expect($(window).scrollTop()).to.equal(currentScrollPosition);
   });
