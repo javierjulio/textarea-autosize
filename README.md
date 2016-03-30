@@ -92,6 +92,7 @@ Replace {type} with any of the following: patch, minor or major
 npm version {type} --no-git-tag-version
 bower version {type} -m "Prep %s release"
 git push origin --tags
+npm publish
 ```
 
 ### Update GitHub Project Page
