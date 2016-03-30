@@ -89,8 +89,8 @@ Run tests: `npm test`
 Replace {type} with any of the following: patch, minor or major
 
 ```
-bower version {type} -m "Prep %s release for Bower"
-npm version {type} -m --no-git-tag-version "Prep %s release for NPM"
+npm version {type} --no-git-tag-version
+bower version {type} -m "Prep %s release"
 git push origin --tags
 ```
 
