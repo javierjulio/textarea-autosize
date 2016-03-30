@@ -20,7 +20,6 @@
 
   Plugin.prototype = {
     init: function() {
-      var height = this.$element.outerHeight();
       var diff = parseInt(this.$element.css('paddingBottom')) +
                  parseInt(this.$element.css('paddingTop')) || 0;
 
