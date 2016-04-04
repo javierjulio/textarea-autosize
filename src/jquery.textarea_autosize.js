@@ -2,6 +2,7 @@
  * jQuery Textarea AutoSize plugin
  * Author: Javier Julio
  * Licensed under the MIT license
+ * Plugin: https://github.com/javierjulio/textarea-autosize
  */
 ;(function ($, window, document, undefined) {
 
@@ -20,10 +21,10 @@
 
   Plugin.prototype = {
     init: function() {
+      this.$element.css('minHeight', parseInt(this.$element.css('minHeight')) || this.$element.outerHeight());
+
       var diff = parseInt(this.$element.css('paddingBottom')) +
-                 parseInt(this.$element.css('paddingTop')) +
-                 parseInt(this.$element.css('borderTopWidth')) +
-                 parseInt(this.$element.css('borderBottomWidth')) || 0;
+        parseInt(this.$element.css('paddingTop')) || 0;
 
       if (containsText(this.element.value)) {
         this.$element.height(this.element.scrollHeight - diff);
@@ -31,14 +32,7 @@
 
       // keyup is required for IE to properly reset height when deleting text
       this.$element.on('input keyup', function(event) {
-        var $window = $(window);
-        var currentScrollPosition = $window.scrollTop();
-
-        $(this)
-          .height(0)
-          .height(this.scrollHeight - diff);
-
-        $window.scrollTop(currentScrollPosition);
+        $(this).height(0).height(this.scrollHeight - diff);
       });
     }
   };
