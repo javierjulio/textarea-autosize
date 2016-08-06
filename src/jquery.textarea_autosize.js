@@ -3,7 +3,17 @@
  * Author: Javier Julio
  * Licensed under the MIT license
  */
-;(function ($, window, document, undefined) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module depending on jQuery.
+    define(['jquery'], function ($) {
+      factory($, window, document);
+    });
+  } else {
+    // No AMD. Register plugin with global jQuery object.
+    factory(jQuery, window, document);
+  }
+}(function ($, window, document, undefined) {
 
   var pluginName = "textareaAutoSize";
   var pluginDataName = "plugin_" + pluginName;
@@ -52,4 +62,4 @@
     return this;
   };
 
-})(jQuery, window, document);
+}));
