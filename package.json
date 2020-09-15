@@ -4,7 +4,7 @@
   "author": {
     "name": "Javier Julio",
     "email": "jjfutbol@gmail.com",
-    "web": "http://www.javier-julio.com/"
+    "web": "https://javierjulio.com/"
   },
   "homepage": "http://javierjulio.github.io/textarea-autosize/",
   "description": "Vertically adjust a textarea based on user input without needing a clone or ghost element.",
