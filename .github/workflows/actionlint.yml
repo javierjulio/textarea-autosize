@@ -1,0 +1,26 @@
+name: GitHub Actions Lint
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/**/*.yaml'
+      - '.github/workflows/**/*.yml'
+  pull_request:
+    paths:
+      - '.github/workflows/**/*.yaml'
+      - '.github/workflows/**/*.yml'
+
+jobs:
+  actionlint:
+    name: Run actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-actionlint@v1
+        with:
+          fail_on_error: true
+          filter_mode: nofilter
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-check
