@@ -47,9 +47,9 @@ If you pre-fill the textarea before page load the textarea will adjust to fit au
 wrapper.update()
 ```
 
-### Clean Up
+### Cleaning Up
 
-Calling the `destroy` method will remove the event handler and element reference.
+Calling the `destroy` method will remove the event handler and release the element reference.
 
 ```js
 wrapper.destroy()
