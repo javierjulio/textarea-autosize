@@ -33,6 +33,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build && npm run build -- --config vite-deploy.config.js",
     "deploy": "gh-pages --dist demo --dotfiles",
+    "prepublish": "npm run predeploy",
     "test": "playwright test --fully-parallel",
     "test:e2e": "playwright test --browser all --fully-parallel"
   },
