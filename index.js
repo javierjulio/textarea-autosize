@@ -1,4 +1,4 @@
-import { TextareaAutoSize } from './src/textarea-autosize.js'
+import { TextareaAutoSize } from './src/textarea-autosize'
 
 const textareaWrapper = new TextareaAutoSize(document.querySelector('textarea.js-auto-size'))
 

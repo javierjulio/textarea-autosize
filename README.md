@@ -20,7 +20,7 @@ Import the script and find the desired `textarea` elements on which to initializ
 <textarea class="js-auto-size" rows="1"></textarea>
 
 <script type="module">
-  import { TextareaAutoSize } from './src/textarea-autosize.js'
+  import { TextareaAutoSize } from './textarea-autosize'
   const wrapper = new TextareaAutoSize(document.querySelector('textarea.js-auto-size'))
 </script>
 ```
