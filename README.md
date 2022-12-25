@@ -68,9 +68,9 @@ wrapper.destroy()
 Replace {type} with any of the following: patch, minor or major
 
 ```
-npm version {type} --no-git-tag-version
+npm version {type}
 git push origin --tags
-npm run deploy && npm publish
+npm publish
 ```
 
 ### Update GitHub Project Page
