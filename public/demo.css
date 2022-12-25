@@ -104,13 +104,11 @@ pre {
 
 .demo-options a {
   display: inline-block;
-  /* font-size: 14px; */
   margin: 0 8px;
 }
 
 .site-footer {
   font-size: 1.125rem;
-  margin-top: 60px;
 }
 
 textarea {
