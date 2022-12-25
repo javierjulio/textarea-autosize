@@ -42,7 +42,15 @@ Increase the `min-height` to have more initial rows. Once text exceeds that mini
 If you pre-fill the textarea before page load the textarea will adjust to fit automatically but if given a value after page load (e.g. single page app) then you will need to trigger an update on the textarea after setting its value for it to size correctly.
 
 ```js
-textareaAutoSizeInstance.update()
+wrapper.update()
+```
+
+### Clean Up
+
+Calling the `destroy` method will remove the event handler and element reference.
+
+```js
+wrapper.destroy()
 ```
 
 ## Development
