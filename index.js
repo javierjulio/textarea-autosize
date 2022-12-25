@@ -4,9 +4,11 @@ const textareaWrapper = new TextareaAutoSize(document.querySelector('textarea.js
 
 document.addEventListener("click", (event) => {
   if (event.target.closest(".js-textarea-demo-options a")) {
+    event.preventDefault()
+
     const link = event.target
     const linkIndex = [...link.parentNode.children].indexOf(link)
-    let textarea = document.querySelector('textarea.js-auto-size');
+    const textarea = document.querySelector('textarea.js-auto-size');
 
     textarea.classList.remove('single-line', 'multiple-lines');
 
@@ -26,9 +28,9 @@ document.addEventListener("click", (event) => {
       textarea.value = ''
     }
 
-    textarea.dispatchEvent(new Event("input", { bubbles: true }))
-    // Or call `update` on the element wrapper
-    // textareaWrapper.update()
+    textareaWrapper.update()
+    // Or manually dispatch input event, either works
+    // textarea.dispatchEvent(new Event("input", { bubbles: true }))
 
     textarea.focus()
   }
