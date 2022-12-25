@@ -27,7 +27,7 @@ Import the script and find the desired `textarea` elements on which to initializ
 
 ### Minimum CSS Requirements
 
-The only requirement is to set `box-sizing: border-box` and a `min-height` on the textarea. In the following example, the minimum height is one line of text which is determined from the inherited font size, line height, and vertical padding.
+In the following example, the minimum height is one line of text which is determined from the inherited font size, line height, and vertical padding. So if your font-size is 16px, line-height is 1.5, top/bottom padding is 6px each, then the minimum height would be 36px since `16 * 1.5 + 12 = 36`.
 
 ```css
 textarea {
@@ -37,7 +37,7 @@ textarea {
 }
 ```
 
-Increase the `min-height` to have more initial rows. Once text exceeds that minimum height the textarea will expand naturally. So if your font-size is 16px, line-height is 1.5, top/bottom padding is 6px each, then the minimum height would be 36px since 16 * 1.5 + 12 = 36.
+Increase the `min-height` to have more initial rows. Once text exceeds that minimum height the textarea will expand naturally until it reaches the maximum height if declared.
 
 ### Updating Textarea Content
 
