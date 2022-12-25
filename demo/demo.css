@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light dark;
+  --font-size: 16px;
+  font-size: var(--font-size);
+  --line-height: 1.5;
+  --max-num-lines: 6;
+  --vpadding: 6px;
+  --vborder: 1px;
+  --single-line-min-height: calc((var(--font-size) * var(--line-height)) + (var(--vpadding) * 2));
+  --single-line-max-height: calc((var(--font-size) * var(--line-height) * var(--max-num-lines)) + (var(--vpadding) * 2));
+  --multiple-lines-max-height: calc((var(--font-size) * var(--line-height) * var(--max-num-lines)) + (var(--vpadding) * 2));
+
+  --text-color: #334259;
+  --text-inverted-color: #fff;
+  --text-muted-color: rgba(0, 0, 0, 0.5);
+  --background-color: #fff;
+  --button-background-color: #f0f0f0;
+  --button-hover-background-color: #e0e0e0;
+  --card-front-background-image: linear-gradient(120deg, #c471f5 0%, #fa71cd 100%);
+  --card-back-background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --table-row-border-color: #dee2e6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --text-inverted-color: #242828;
+    --text-muted-color: rgba(255, 255, 255, 0.5);
+    --background-color: #242828;
+    --button-background-color: #343838;
+    --button-hover-background-color: #444848;
+    --card-front-background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    --card-back-background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+    --table-row-border-color: #555;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: var(--line-height);
+}
+
+a {
+  color:#39c;
+  font-weight:400;
+  text-decoration:none;
+}
+
+code, pre {
+  color: --var(--text-color);
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
+  font-size: 14px;
+}
+
+pre {
+  background-color: --var(--background-color);
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow-x: auto;
+  padding: 8px 10px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 40px 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-bottom-5x {
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+.demo-options {
+  margin-bottom: 10px;
+}
+
+.demo-options a {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 12px;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #39c;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  border-color: rgba(0, 0, 0, 0.195);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, .1);
+}
+
+.site-footer {
+  margin-top: 60px;
+}
+
+textarea {
+  border: var(--vborder) solid #d9d9d9;
+  border-radius: 3px;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: var(--vpadding) 8px;
+  overflow: auto;
+  width: 100%;
+}
+
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 0 6px rgba(102, 175, 233, .6);
+  outline: 0;
+}
+
+.single-line {
+  min-height: var(--single-line-min-height);
+  max-height: var(--single-line-max-height);
+}
+
+.multiple-lines {
+  min-height: 86px;
+  max-height: var(--multiple-lines-max-height);
+}
