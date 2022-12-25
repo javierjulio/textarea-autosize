@@ -14,11 +14,12 @@
   --text-inverted-color: #fff;
   --text-muted-color: rgba(0, 0, 0, 0.5);
   --background-color: #fff;
+  --primary-color: #1A59FF;
+  --secondary-color: #ab17e6;
   --button-background-color: #f0f0f0;
   --button-hover-background-color: #e0e0e0;
   --card-front-background-image: linear-gradient(120deg, #c471f5 0%, #fa71cd 100%);
   --card-back-background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --table-row-border-color: #dee2e6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,11 +28,12 @@
     --text-inverted-color: #242828;
     --text-muted-color: rgba(255, 255, 255, 0.5);
     --background-color: #242828;
+    --primary-color: #ffda23;
+    --secondary-color: #69ff48;
     --button-background-color: #343838;
     --button-hover-background-color: #444848;
     --card-front-background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     --card-back-background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-    --table-row-border-color: #555;
   }
 }
 
@@ -56,9 +58,12 @@ body {
 }
 
 a {
-  color:#39c;
-  font-weight:400;
-  text-decoration:none;
+  color: var(--primary-color);
+  transition: color .3s;
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
 
 code, pre {
