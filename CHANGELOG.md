@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**0.5.0** (unreleased)
+**1.0.0** (2022-12-25)
 
 * Rewrite as ES6 script, no jQuery, and using Vite/Playwright
 
