@@ -1,5 +1,3 @@
-import { fs } from 'fs'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
