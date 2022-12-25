@@ -6,29 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/textarea-autosize/normalize.css">
   <link rel="stylesheet" href="/textarea-autosize/demo.css">
-  <script type="module" crossorigin src="/textarea-autosize/assets/index-dbe6a904.js"></script>
+  <script type="module" crossorigin src="/textarea-autosize/assets/index-cad83fc0.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1 class="logo text-center">Textarea AutoSize</h1>
+    <h1 class="logo">Textarea AutoSize</h1>
 
-    <p class="margin-bottom-5x text-center">Vertically adjust a textarea based on user input and control all presentation in CSS. <strong>No clone or ghost elements</strong> used. &#x1f609;</p>
+    <p class="margin-bottom-5x">With <a href="https://github.com/javierjulio/textarea-autosize">textarea-autosize</a> it can vertically adjust a textarea based on user input while all presentation is controlled through CSS. <strong>No clone or ghost elements</strong> used. No jQuery either. Just plain vanilla JS. &#x1f609;</p>
 
-    <nav class="demo-options text-center js-textarea-demo-options">
+    <nav class="demo-options js-textarea-demo-options">
       <a href="#">Single Line</a>
       <a href="#">Multiple Lines</a>
-      <a href="#">Pre-Filled</a>
+      <a href="#">Prefilled</a>
     </nav>
 
     <div class="margin-bottom-5x">
       <textarea data-testid="sample-textarea" class="single-line js-auto-size" rows="1" autofocus></textarea>
     </div>
 
-    <p>The following sample assumes a single line is the default.</p>
+    <p>The sample code assumes a single line is the default.</p>
 
     <p>Sample HTML:</p>
     <div class="highlight highlight-html"><pre>&lt;textarea class="js-auto-size" rows="1"&gt;&lt;/textarea&gt;
-
 &lt;script type="module"&gt;
   import { TextareaAutoSize } from './src/textarea-autosize.js'
   const wrapper = new TextareaAutoSize(
@@ -48,8 +47,11 @@
     <p>The min and max height in the sample CSS is a pre-calculated value. If your font-size is 16px, line-height is 1.5 and top/bottom padding is 6px each, then the minimum height would be 36px since 16 * 1.5 + 12 = 36.</p>
 
     <footer class="site-footer text-center">
-      <p><a href="https://github.com/javierjulio/textarea-autosize" class="btn btn-primary">View textarea-autosize on GitHub</a></p>
-      <p>By <a href="https://github.com/javierjulio">javierjulio</a></p>
+      <p>
+        <a href="https://github.com/javierjulio/textarea-autosize">
+          View the textarea-autosize project on GitHub
+        </a>
+      </p>
     </footer>
   </div>
 
