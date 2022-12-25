@@ -2,7 +2,7 @@
 
 This package contains a `TextareaAutoSize` ES6 class for vertically adjusting a textarea based on user input and controlling any presentation in CSS. <strong>No clone or ghost elements</strong> are used. No jQuery dependency either, just plain vanilla JS. &#x1f609;
 
-This was a fun project I started in Aug 2012 using jQuery. Nowadays, the same hack can be implemented using vanilla JS with such little code that I don't recommend using this package. Instead just implement the component code in your project so it can be modified to your requirements.
+This was a fun project I started in Aug 2012 as a jQuery plugin. Nowadays, the same hack can be implemented using vanilla JS with such little code that I don't recommend using this package. Instead just implement the component code in your project so it can be modified to your requirements.
 
 ## Installation
 
