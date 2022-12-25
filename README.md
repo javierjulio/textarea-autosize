@@ -70,7 +70,7 @@ Replace {type} with any of the following: patch, minor or major
 ```
 npm version {type}
 git push origin --tags
-npm publish
+npm run predeploy && npm publish
 ```
 
 ### Update GitHub Project Page
