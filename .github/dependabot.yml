@@ -6,11 +6,17 @@ updates:
       interval: monthly
       time: "12:00"
       timezone: America/New_York
-    open-pull-requests-limit: 99
+    groups:
+      npm:
+        patterns:
+          - "*"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: monthly
       time: "12:00"
       timezone: America/New_York
-    open-pull-requests-limit: 99
+    groups:
+      github-actions:
+        patterns:
+          - "*"
