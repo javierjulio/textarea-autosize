@@ -4,6 +4,8 @@ This package contains a `TextareaAutoSize` ES6 class for vertically adjusting a 
 
 This was a fun project I started in Aug 2012 as a jQuery plugin. Nowadays, the same hack can be implemented using vanilla JS with such little code that I don't recommend using this package. Instead just implement the component code in your project so it can be modified to your requirements.
 
+Another option is to use CSS only as Chrome and Edge support the `field-sizing: content;` rule ([example](https://x.com/destroytoday/status/1835405977316655563?s=46&t=rJQqlM-fHG30Nss1znczlQ))
+
 ## Installation
 
 ### NPM
