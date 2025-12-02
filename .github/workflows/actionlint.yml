@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: reviewdog/action-actionlint@v1
         with:
-          fail_on_error: true
+          fail_level: any
           filter_mode: nofilter
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-check
