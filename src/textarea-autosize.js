@@ -20,6 +20,15 @@ class TextareaAutoSize {
   }
 
   update() {
+    // Find nearest scrollable ancestor
+    let box = this.element.parentElement
+
+    while (box && !/auto|scroll/.test(getComputedStyle(box).overflowY)) {
+      box = box.parentElement
+    }
+
+    const prevScroll = box?.scrollTop ?? 0
+
     const smallestHeight = this._styleProp("fontSize")
     this.element.style.height = `${smallestHeight}px`
 
@@ -28,6 +37,11 @@ class TextareaAutoSize {
     // do the same regardless of whether this value is added or not.
     const newHeight = this.element.scrollHeight + this.verticalBorderSize
     this.element.style.height = `${newHeight}px`
+
+    // Restore scroll to prevent jumping
+    if (box) {
+      box.scrollTop = prevScroll
+    }
   }
 
   _styleProp(name) {
