@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [24.x]
         browser: [chromium, firefox, webkit]
     name: ${{ matrix.browser }} - Node ${{ matrix.node-version }}
     steps:
